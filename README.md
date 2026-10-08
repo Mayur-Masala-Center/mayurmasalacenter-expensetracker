@@ -117,6 +117,7 @@ Run the migration files in `supabase/migrations/` in order:
 8. `0008_fix_amount_check.sql` — amount validation fix
 9. `0009_update_views_for_purchase_vendors.sql` — DB views
 10. `0010_add_bill_no.sql` — bill number tracking
+11. `0011_sync_bills_to_daily_sales.sql` — auto-adds printed bills from the billing app to each day's sales (needs the billing app tables in the same Supabase project)
 
 ### 4. Run dev server
 ```bash
