@@ -51,12 +51,17 @@ export default function DataTable({
                 {(onEdit || onDelete) && (
                   <td className="px-2 md:px-3 text-right whitespace-nowrap">
                     <div className="flex items-center justify-end gap-0.5">
-                      {onEdit && (
+                      {r.source === "billing" && (
+                        <span className="text-[10px] uppercase tracking-wide text-masala-brown/40" title="Auto-synced from printed bills">
+                          Auto
+                        </span>
+                      )}
+                      {r.source !== "billing" && onEdit && (
                         <button onClick={() => onEdit(r)} className="p-1.5 rounded-md hover:bg-masala-gold/20 text-masala-brown/60 hover:text-masala-gold transition-colors" title="Edit">
                           <Pencil size={14} />
                         </button>
                       )}
-                      {onDelete && (
+                      {r.source !== "billing" && onDelete && (
                         <button onClick={() => onDelete(r)} className="p-1.5 rounded-md hover:bg-masala-red/10 text-masala-brown/60 hover:text-masala-red transition-colors" title="Delete">
                           <Trash2 size={14} />
                         </button>
